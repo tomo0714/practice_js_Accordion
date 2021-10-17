@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* reset */
+body * {
+  box-sizing: border-box;
+}
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dd,
+dt,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+/* base */
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* main */
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+body {
+  background-color: gainsboro;
+  color: darkblue;
+}
+h1 {
+  text-align: center;
+  margin: 70px 0;
+  font-weight: normal;
+  font-size: 40px;
+}
+dt {
+  background-color: darkblue;
+  color: #fff;
+  height: 350px;
+  width: 50px;
+  float: left;
+}
+dt a {
+  display: inline-block;
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+dd {
+  background-color: darkblue;
+  color: #fff;
+  float: left;
+  width: 800px;
+  height: 350px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* javascript */
+dt a:not(.currentBtn) {
+  background-color: rgb(55, 55, 139);
+}
+dt a:not(.currentBtn):hover {
+  background-color: orange;
+}
