@@ -1,5 +1,4 @@
 // DOM
-const defTeam = Array.from(document.getElementsByTagName('dt'));
 const defData = Array.from(document.getElementsByTagName('dd'));
 const anchor = Array.from(document.getElementsByTagName('a'));
 const current = document.getElementsByClassName('current');
@@ -27,7 +26,23 @@ const accordion =  e => {
 const addClass = (openEl, el) => {
     openEl.classList.add('current');
     el.classList.add('currentBtn');
-}
+};
+  
+const getOpenElememt = el => {
+    const href = el.getAttribute('href')
+    const openEl = document.getElementById(href);
+    return openEl;
+};
+
+const removeClass = () => {
+    defData.forEach(dd => {
+        dd.classList.remove('current');
+    });
+    anchor.forEach(a => {
+        a.classList.remove('currentBtn');
+    });
+};
+
 
 const slideClose = (el, duration = 300) => {
     el.style.width = el.offsetWidth + "px";
@@ -70,22 +85,6 @@ const slideOpen = (el, duration = 300) => {
       el.style.removeProperty("transition-property");
       el.style.removeProperty("transition-timing-function");
     }, duration);
-  };
-  
-
-const getOpenElememt = el => {
-    const href = el.getAttribute('href')
-    const openEl = document.getElementById(href);
-    return openEl;
-};
-
-const removeClass = () => {
-    defData.forEach(dd => {
-        dd.classList.remove('current');
-    });
-    anchor.forEach(a => {
-        a.classList.remove('currentBtn');
-    });
 };
 
 // Event
